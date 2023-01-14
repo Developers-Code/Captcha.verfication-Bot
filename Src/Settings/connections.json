@@ -1,0 +1,37 @@
+{
+    "Server": {
+        "Hosting": {
+            "status": true,
+            "port": "80"
+        },
+        "Website": {
+            "status": false,
+            "port": "80"
+        }
+    },
+    "Database": {
+        "MongoDB": {
+            "status": true,
+            "link": ""
+        }
+    },
+    "Social_media": {
+        "Twitter": {
+
+        }
+    },
+    "Music": {
+        "Lyrics": {
+            "status":false,
+            "api": {
+                "ksoft": {
+                    "status":false,
+                    "api": ""
+                }
+            }
+        }
+
+    }
+
+
+}
