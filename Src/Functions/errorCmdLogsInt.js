@@ -4,4 +4,4 @@ console.log((String(error.stack).bgRed))
 
 }
 
-module.exports = {  errorCmdLogsInt }
+module.exports = errorCmdLogsInt 
