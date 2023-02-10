@@ -19,19 +19,6 @@
         "Twitter": {
 
         }
-    },
-    "Music": {
-        "Lyrics": {
-            "status":false,
-            "api": {
-                "ksoft": {
-                    "status":false,
-                    "api": ""
-                }
-            }
-        }
-
     }
-
 
 }

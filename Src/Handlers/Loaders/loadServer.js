@@ -1,4 +1,5 @@
 function loadServer(client, color) {
-
+    
 }
-    module.exports = { loadServer }
+
+module.exports = loadServer;

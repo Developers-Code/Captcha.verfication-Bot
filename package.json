@@ -1,11 +1,12 @@
 {
-  "name": "xcaptcha.bot",
+  "name": "captcha.verification-bot",
   "version": "0.0.1-alpha-1",
   "description": "✅ I'm XCaptcha.bot, a Captcha Bot Packed many Features.",
   "main": "index.js",
   "dependencies": {
     "colors": "1.4.0",
     "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
     "node": "^19.4.0"
   },
   "scripts": {
@@ -19,7 +20,7 @@
     "discord-bot",
     "discord.js",
     "captcha-bot",
-    "verfication-discord-bot"
+    "verification-discord-bot"
   ],
   "author": "Shadow Gaming",
   "license": "MIT",

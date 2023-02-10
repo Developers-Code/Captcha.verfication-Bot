@@ -1,0 +1,11 @@
+{
+    "Bot": {
+        "token": "",
+        "clientID": "",
+        "clientSecret": ""
+    },
+    "Developer": {
+        "name": [""],
+        "id": [""]
+    }
+}

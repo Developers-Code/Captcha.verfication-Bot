@@ -1,3 +1,49 @@
 {
-    
+    "Handlers": {
+        "antiCrash": true,
+        "checkEnvironment": true,
+            "Loaders" : {
+                "loadServer": true,
+                "loadMessageCommand": false,
+                "loadSlashCommands": true,
+                "loadEvents": true,
+                "MongoDB": true
+        }
+    },
+    "Events": {
+        "Client": {
+            "debug": true,
+            "error": true,
+            "ready": true,
+            "reconnecting": true,
+            "disconnect": true,
+            "rateLimit": true,
+            "warn": true
+        },
+        "Shard": {
+            "ready": true,
+            "reconnecting": true,
+            "disconnect": true,
+            "create": true,
+            "resume": true
+        },
+        "Guild": {
+            "create": {
+                "enable": true,
+                "sendLog": true,
+                "sendMessage": false,
+                "//Comment": "sends message in the server that bot joined in random channel" 
+
+            },
+            "delete": {
+                "enable": true,
+                "sendLog": true
+            }
+        },
+        "interaction": {
+            "create":true,
+            "button": true,
+            "select": true
+        }
+    }
 }

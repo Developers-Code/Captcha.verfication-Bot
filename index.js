@@ -5,12 +5,8 @@ const color = require("colors")
  
 //====================[ Import Settings ]====================\\
 
-const connections = require("/Src/Settings/connections.json")
-const handlers = require("/Src/Settings/handlers.json")
-
-//====================[ Create Client ]====================\\
-
-const clientSettingsObject = require("/Src/Functions/clientSettingsObject.js")
+const connections = require("./Src/Settings/connections.json")
+const handlers = require("./Src/Settings/handlers.json")
 
 //====================[ Functions ]====================\\
 
@@ -18,17 +14,33 @@ const { loadCommands } = require("./Src/Handlers/Loaders/loadCommands.js")
 const { loadEvents } = require("./Src/Handlers/Loaders/loadEvents.js")
 const { loadServer } = require("./Src/Handlers/Loaders/loadServer.js")
 const { mongoDB } = require("./Src/Handlers/Loaders/mongoDB.js")           
-const { antiCrash } = require("./Src/Functions/Loaders/antiCrash") 
 
-//====================[ Collection ]====================\\                                                                                     
+//====================[ Other ]====================\\
+require('dotenv').config();
+
+//====================[ Create Client ]====================\\
+        try {     
+
+const clientSettingsObject = require("./Src/Functions/clientSettingsObject.js")
+const client = new Client(clientSettingsObject());
+
+//====================[ Collection ]====================\\                                                                          
 client.commands = new Collection();
 client.events = new Collection();
 
+//====================[ Handlers ]====================\\  
+fs.reddirSync("./Src/Handlers").foreach(handler => {
+    require("./Src/Handlers/${handler}") (client);
+});
+
 //====================[ Login into the bot ]====================\\                                                                                     
 client.log(process.env.token).then(() => {
+
+//====================[ Loaders ]====================\\
     loadEvents(client, color);
     loadCommands(client, color);
     mongoDB(client, color)
-}).catch(error => {
-    console.error(`${color.bold.red(`[Index error]`)} ` + `${error}`.bgRed);
-});
+})
+        } catch (error) {
+            errorCmdLogs(client, interaction, error)
+        };
