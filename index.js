@@ -2,7 +2,7 @@
 
 const { Client, GatewayIntentBits, Partials, Collection } = require("discord.js");
 const color = require("colors")
- 
+ require("dotenv").config();
 //====================[ Import Settings ]====================\\
 
 const connections = require("./Src/Settings/connections.json")
