@@ -30,7 +30,7 @@ fs.readdirSync(handlersDir).forEach(handlerFile => {
 // Log in to Discord using bot token from environment variables
 client.login(process.env.token).then(() => {
     // Load events, commands, and MongoDB connection
-    loadAntiCrash(client,color)
+    loadAntiCrash(client,color);
     loadEvents(client, color);
     loadCommands(client, color);
     
