@@ -24,11 +24,11 @@ client.events = new Collection();
 const handlersDir = './Src/Handlers';
 fs.readdirSync(handlersDir).forEach(handlerFile => {
     const handlerPath = path.join(handlersDir, handlerFile);
-    require(handlerPath)(client);
+    
 });
 
 // Log in to Discord using bot token from environment variables
-client.login(process.env.TOKEN).then(() => {
+client.login(process.env.token).then(() => {
     // Load events, commands, and MongoDB connection
     loadEvents(client, color);
     loadCommands(client, color);
