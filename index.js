@@ -8,7 +8,7 @@ require('dotenv').config();
 // Function to load commands and events
 const {loadCommands} = require('./Src/Handlers/Loaders/loadCommands');
 const {loadEvents} = require('./Src/Handlers/Loaders/loadEvents');
-
+const { loadAntiCrash} = require("./Src/Handlers/antiCrash.js")
 
 // Function to create client settings object
 const clientSettingsObject = require('./Src/Functions/clientSettingsObject');
@@ -30,6 +30,7 @@ fs.readdirSync(handlersDir).forEach(handlerFile => {
 // Log in to Discord using bot token from environment variables
 client.login(process.env.token).then(() => {
     // Load events, commands, and MongoDB connection
+    loadAntiCrash(client,color)
     loadEvents(client, color);
     loadCommands(client, color);
     
