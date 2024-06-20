@@ -6,9 +6,9 @@ const color = require('colors');
 require('dotenv').config();
 
 // Function to load commands and events
-const loadCommands = require('./Src/Handlers/Loaders/loadCommands');
-const loadEvents = require('./Src/Handlers/Loaders/loadEvents');
-const mongoDB = require('./Src/Handlers/Loaders/mongoDB');
+const {loadCommands} = require('./Src/Handlers/Loaders/loadCommands');
+const {loadEvents} = require('./Src/Handlers/Loaders/loadEvents');
+
 
 // Function to create client settings object
 const clientSettingsObject = require('./Src/Functions/clientSettingsObject');
@@ -32,7 +32,7 @@ client.login(process.env.token).then(() => {
     // Load events, commands, and MongoDB connection
     loadEvents(client, color);
     loadCommands(client, color);
-    mongoDB(client, color);
+    
 }).catch(error => {
     console.error('Error logging in:', error);
 });
