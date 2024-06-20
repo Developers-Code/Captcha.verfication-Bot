@@ -42,5 +42,5 @@ client.log(process.env.token).then(() => {
     mongoDB(client, color)
 })
         } catch (error) {
-            errorCmdLogs(client, interaction, error)
+            
         };
