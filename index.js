@@ -30,9 +30,12 @@ client.commands = new Collection();
 client.events = new Collection();
 
 //====================[ Handlers ]====================\\  
-fs.reddirSync("./Src/Handlers").foreach(handler => {
-    require("./Src/Handlers/${handler}") (client);
-});
+    const handlers = fs.readdirSync(handlerDir);
+
+    handlers.forEach(handler => {
+        const handlerPath = path.join(handlerDir, handler);
+        require(handlerPath)(client); // Assuming 'client' is already defined
+    });
 
 //====================[ Login into the bot ]====================\\                                                                                     
 client.log(process.env.token).then(() => {
