@@ -17,7 +17,7 @@ const clientSettingsObject = require('./Src/Functions/clientSettingsObject');
 const client = new Client(clientSettingsObject());
 
 // Set up collections for commands and events
-client.commands = new Collection();
+client.slashCommands = new Collection();
 client.events = new Collection();
 
 // Read handlers directory synchronously and load each handler
