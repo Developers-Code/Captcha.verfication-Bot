@@ -5,11 +5,9 @@ const { errorCmdLogs1 } = require(`${process.cwd()}/Functions/errorCmdLogs.js`);
 const { onCoolDown1 } = require(`${process.cwd()}/Functions/onCoolDown.js`);
 const { author, version } = require(`${process.cwd()}/package.json`);
 const Settings = require(`${process.cwd()}/Settings/settings.json`);
-const Config = require(`${process.cwd()}/Settings/config.json`);
-const Emoji = require(`${process.cwd()}/Settings/emojis.json`);
-const Embed = require(`${process.cwd()}/Settings/embed.json`);
+
 // =======================================================
-const prefix = Config.SETTINGS.PREFIX;
+const prefix = "?"
 
 //=====================================| Code |=====================================\\
 
