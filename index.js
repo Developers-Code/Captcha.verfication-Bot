@@ -16,7 +16,7 @@ const { loadServer } = require("./Src/Handlers/Loaders/loadServer.js")
 const { mongoDB } = require("./Src/Handlers/Loaders/mongoDB.js")           
 
 //====================[ Other ]====================\\
-require('dotenv').config();
+
 
 //====================[ Create Client ]====================\\
         try {     
@@ -42,5 +42,5 @@ client.log(process.env.token).then(() => {
     mongoDB(client, color)
 })
         } catch (error) {
-            
+            console.log(error)
         };
